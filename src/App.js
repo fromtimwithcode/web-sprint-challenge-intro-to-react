@@ -29,7 +29,8 @@ const App = () => {
     justify-items: center;
   `;
 
-  const Title = styled.div`
+  const Title = styled.h1`
+    color: white;
   `;
 
   return (
