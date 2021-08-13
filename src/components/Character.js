@@ -1,16 +1,16 @@
 // Write your Character component here
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+`;
 
 export default function Character(props) {
     const { data } = props;
 
     return(
-        <div>
-            {data.map(dataObj => {
-                return(
-                    dataObj.name
-                )
-            })}
-        </div>
+        <StyledDiv>
+            {data.name}
+        </StyledDiv>
     )
 }

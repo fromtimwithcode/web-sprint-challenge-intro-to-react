@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Character from './components/Character'
+import Character from './components/Character';
+import styled from 'styled-components';
 import './App.css';
 
 const App = () => {
@@ -21,11 +22,25 @@ const App = () => {
       })
   }, [])
 
+  const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  `;
+
+  const Title = styled.div`
+  `;
+
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Character data={data} />
-    </div>
+    <Container>
+      { error && <Title>{error}</Title> }
+      <Title>Characters</Title>
+      {data.map ((char, i) => {
+        return <Character data={char} key={i} />
+        })
+      }
+    </Container>
   );
 }
 
